@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Member Registration</title>
+    <script>
+        
+        function validateForm() {
+            var x = document.forms["registerForm"]["password"].value;
+            var y = document.forms["registerForm"]["password_check"].value;
+            if(x.length<6){
+                alert("Password length is insufficient");
+                return false;
+            }
+            if (x != y) {
+                alert("Please confirm the password is entered correctly");
+                return false;
+            }
+        }
+    </script>
+    
+    </head>
+<body>
+    <h1>Registration Page</h1>
+<form name="registerForm" method="post" action="register.php" onsubmit="return validateForm()">
+Account：
+    <input type="text" name="username"><br/><br/>
+Password：
+<input type="password" name="password" id="password"><br/><br/>
+Confirm Password：
+    <input type="password" name="password_check" id="password_check"><br/><br/>
+<input type="submit" value="Register" name="submit">
+<input type="reset" value="Reset" name="submit">
+</form>
+
+
+</body>
+</html>
